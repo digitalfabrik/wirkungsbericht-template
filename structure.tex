@@ -1,0 +1,172 @@
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\usepackage[ngerman]{babel} 
+
+%\usepackage{microtype} % Better typography
+
+%\usepackage{amsmath,amsfonts,amsthm} % Math packages for equations
+
+%\usepackage[svgnames]{xcolor} % Enabling colors by their 'svgnames'
+
+\usepackage[hang,small,labelfont=bf,up,textfont=it]{caption} % Custom captions under/above tables and figures
+
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{graphicx} % Required for adding images
+\graphicspath{{figure/}}
+
+\usepackage{enumitem} % Required for customising lists
+\setlist{noitemsep} % Remove spacing between bullet/numbered list elements
+
+%\usepackage{sectsty} % Enables custom section titles
+%\allsectionsfont{\usefont{OT1}{phv}{b}{n}} % Change the font of all section commands (Helvetica)
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{tabularx}
+
+\usepackage[verbose]{placeins}
+
+\usepackage[official]{eurosym}
+
+\usepackage{longtable}
+
+\urlstyle{same}
+
+
+%----------------------------------------------------------------------------------------
+%	MARGINS AND SPACING
+%----------------------------------------------------------------------------------------
+
+\usepackage{geometry} % Required for adjusting page dimensions
+
+\geometry{
+	top=2cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	left=3cm, % Left margin
+	right=3cm, % Right margin
+	includehead, % Include space for a header
+	%includefoot, % Include space for a footer
+    showframe, % Uncomment to show how the type block is set on the page
+}
+
+\setlength{\columnsep}{7mm} % Column separation width
+
+%----------------------------------------------------------------------------------------
+%	FONTS
+%----------------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[default,osfigures,scale=0.95]{opensans} 
+\usepackage[T1]{fontenc}
+
+%----------------------------------------------------------------------------------------
+%   TOC	
+%----------------------------------------------------------------------------------------
+\setcounter{tocdepth}{2}
+
+%----------------------------------------------------------------------------------------
+%	HEADERS AND FOOTERS
+%----------------------------------------------------------------------------------------
+
+\usepackage{fancyhdr} % Needed to define custom headers/footers
+\pagestyle{fancy} % Enables the custom headers/footers
+
+%\renewcommand{\headrulewidth}{0.0pt} % No header rule
+%\renewcommand{\footrulewidth}{0.4pt} % Thin footer rule
+
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{}} % Removes the section number from the header when \leftmark is used
+
+%\nouppercase\leftmark % Add this to one of the lines below if you want a section title in the header/footer
+
+% Headers
+\lhead{} % Left header
+
+% Footers
+\lfoot{} % Left footer
+\cfoot{} % Center footer
+\rfoot{\footnotesize\thepage} % Right footer, "Page 1 of 2"
+
+%\fancypagestyle{firstpage}{ % Page style for the first page with the title
+	%\fancyhf{}
+	%\renewcommand{\footrulewidth}{0pt} % Suppress footer rule
+%}
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+
+\newcommand{\authorstyle}[1]{{\large\usefont{OT1}{phv}{b}{n}\color{Black}#1}} % Authors style (Helvetica)
+
+\newcommand{\institution}[1]{{\footnotesize\usefont{OT1}{phv}{m}{sl}\color{Black}#1}} % Institutions style (Helvetica)
+
+
+\usepackage{titling} % Allows custom title configuration
+
+\newcommand{\HorRule}{\rule{\linewidth}{1pt}} % Defines the horizontal rule around the title
+
+
+\pretitle{
+	\vspace{60pt} % Move the entire title section up
+	\hspace{310pt}
+	\\
+	\\
+	\vspace{40pt}
+	\HorRule\vspace{10pt} % Horizontal rule before the title
+    \centering\Huge\textbf
+}
+
+\posttitle{\par\vskip 15pt} % Whitespace under the title
+
+\preauthor{} % Anything that will appear before \author is printed
+
+\postauthor{ % Anything that will appear after \author is printed
+	\vspace{10pt} % Space before the rule
+	\par\HorRule % Horizontal rule after the title
+	\vspace{150pt} % Space after the title section
+}
+
+\usepackage{eso-pic}
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{title_background.pdf}%
+\vfill
+}}}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\usepackage{lettrine} % Package to accentuate the first letter of the text (lettrine)
+\usepackage{fix-cm}	% Fixes the height of the lettrine
+
+\newcommand{\initial}[1]{ % Defines the command and style for the lettrine
+	\lettrine[lines=3,findent=4pt,nindent=0pt]{% Lettrine takes up 3 lines, the text to the right of it is indented 4pt and further indenting of lines 2+ is stopped
+		{#1}% The letter
+	}{}%
+}
+
+\usepackage{xstring} % Required for string manipulation
+
+\newcommand{\lettrineabstract}[1]{
+	\StrLeft{#1}{1}[\firstletter] % Capture the first letter of the abstract for the lettrine
+	\initial{\firstletter}\textbf{\StrGobbleLeft{#1}{1}} % Print the abstract with the first letter as a lettrine and the rest in bold
+}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+%\addbibresource{example.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
