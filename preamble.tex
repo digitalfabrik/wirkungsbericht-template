@@ -2,7 +2,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\usepackage[ngerman]{babel} 
+\usepackage[ngerman]{babel}
 
 \usepackage[hang,small,labelfont=bf,up,textfont=it]{caption} % Custom captions under/above tables and figures
 
@@ -26,7 +26,9 @@
 
 \urlstyle{same}
 
-\pretolerance=10000 % https://tex.stackexchange.com/questions/31301/how-to-reduce-the-number-of-hyphenation
+\pretolerance=8000
+\tolerance=5000
+\emergencystretch=10pt % https://tex.stackexchange.com/questions/31301/how-to-reduce-the-number-of-hyphenation
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
@@ -55,11 +57,12 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage[default,osfigures,scale=0.95]{opensans} 
+\usepackage[default,osfigures,scale=0.95]{opensans}
 \usepackage[T1]{fontenc}
+\usepackage{eurosym}
 
 %----------------------------------------------------------------------------------------
-%   TOC	
+%   TOC
 %----------------------------------------------------------------------------------------
 \setcounter{tocdepth}{2}
 
